@@ -2,7 +2,7 @@
 Vue 3 + Vuetify 3 Alpha
 Components : Color Picker | Customer List | Timer
 
-# ![Link](https://bakeluco.github.io/austintest/)
+# [LINK](https://bakeluco.github.io/austintest/)
 
 ## Project setup
 ```
