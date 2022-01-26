@@ -1,4 +1,8 @@
-# austintest
+# Austin Test
+Vue 3 + Vuetify 3 Alpha
+Components : Color Picker | Customer List | Timer
+
+# ![Link](https://bakeluco.github.io/austintest/)
 
 ## Project setup
 ```
@@ -14,6 +18,3 @@ npm run serve
 ```
 npm run build
 ```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
