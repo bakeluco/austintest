@@ -74,7 +74,7 @@ export default {
   position: absolute;
   bottom: 4px;
   width: 30%;
-  background: rgba(255, 255, 255, 0.6);
+  background: #ffffff99;
   left: 35%;
   font-style: italic;
 }

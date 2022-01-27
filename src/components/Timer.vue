@@ -1,10 +1,9 @@
 <template>
   <v-card>
     <v-card-title> Timer </v-card-title>
-    <v-card-text>
-      Just a simple timer. Actions available : Play, Pause, Reset, Add + 10
-      seconds.
-    </v-card-text>
+    <v-card-text> Just a simple timer. </v-card-text>
+    <v-card-text> Play, Pause, Reset, Add + 10 seconds. </v-card-text>
+    <v-card-text> Don't worry it'll automatically stop at 0. </v-card-text>
     <div class="d-flex justify-center">
       <span class="timer-value" v-text="timer"></span>
     </div>
@@ -53,18 +52,17 @@ export default {
     let interval;
 
     function countdown() {
-      if (state) return console.log("Already running...");
+      if (state) return;
       return (interval = setInterval(() => {
+        if (!counter.value) return stop();
         counter.value--;
       }, 1000));
     }
 
     function play() {
+      if (!counter.value) return;
       countdown();
-      // setTimeout(() => {
       state = true;
-      // counter.value--;
-      // }, 1000);
     }
 
     function stop() {

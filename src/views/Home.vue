@@ -17,13 +17,18 @@
         Compistion API. Data binding between components provided by Vuex.
       </v-card-text>
       <v-card-text>
-        Task 1: Colour picker given a provided prop type Array. However, I've included an option to add custom hex value.
+        Task 1: Colour picker given a provided prop type Array. However, I've
+        included an option to add custom hex value.
       </v-card-text>
       <v-card-text>
-        Task 2: Customer list. Just add text to an array. However, I store said array in Json format on your browser's local storage to simulate an API Rest endpoint. Moreover, I've added the options to edit or delete each entry.
+        Task 2: Customer list. Just add text to an array. However, I store said
+        array in Json format on your browser's local storage to simulate an API
+        Rest endpoint. Moreover, I've added the options to edit or delete each
+        entry.
       </v-card-text>
       <v-card-text>
-        Task 3: A countdown timer with the ability to stop it. However, I've included the options to play, pause, reset & add 10 seconds.
+        Task 3: A countdown timer with the ability to stop it. However, I've
+        included the options to play, pause, reset & add 10 seconds.
       </v-card-text>
       <v-card-text> Here are some previews. Thanks! </v-card-text>
       <v-card-actions class="justify-center">
@@ -41,7 +46,10 @@
             contain
             :src="link.src"
           >
-            <span>{{ link.name }}</span>
+            <!-- <span :style="{ background: '#aaaaaa99' }" class="rounded pa-1">{{ -->
+            <span>{{
+              link.name
+            }}</span>
             <v-icon v-if="hover">mdi-open-in-new</v-icon>
           </v-img>
         </v-hover>
@@ -70,7 +78,7 @@ export default {
       {
         name: "Timer",
         path: "/timer",
-        src: require("../assets/customerListDemo.gif"),
+        src: require("../assets/timerDemo.gif"),
       },
     ]);
     return { links };
