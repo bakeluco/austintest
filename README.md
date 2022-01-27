@@ -15,6 +15,6 @@ Task 2: Customer list. Just add text to an array. However, I store said array in
 ![Colour Picker](./src/assets/customerListDemo.gif)
 ## Timer Component
 ### Got seconds? I'll give you minutes!
-Task 2: Customer list. Just add text to an array. However, I store said array in Json format on your browser's local storage to simulate an API Rest endpoint. Moreover, I've added the options to edit or delete each entry.
+Task 3: A countdown timer with the ability to stop it. However, I've included the options to play, pause, reset & add 10 seconds.
 ### Play, pause, rewind, +10 seconds!
 ![Colour Picker](./src/assets/timerDemo.gif)
