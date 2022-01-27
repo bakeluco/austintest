@@ -1,16 +1,24 @@
 <template>
-    <v-layout full-height class="justify-center align-center" :style="{backgroundColor: $store.state.colours.timer}">
-        <v-card>
-            <v-card-title>
-                Timer
-            </v-card-title>
-        </v-card>
-    </v-layout>
+  <v-layout
+    full-height
+    class="justify-center align-center"
+    :style="{ backgroundColor: $store.state.colours.timer }"
+  >
+    <Timer :time="time" />
+  </v-layout>
 </template>
 <script>
+import { ref } from "vue";
+import Timer from "../components/Timer.vue";
+
 export default {
-    setup() {
-        
-    },
-}
+  components: {
+    Timer,
+  },
+  setup() {
+    const time = ref(120);
+
+    return { time };
+  },
+};
 </script>

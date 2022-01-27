@@ -4,7 +4,7 @@
     class="justify-center align-center"
     :style="{ backgroundColor: $store.state.colours.home }"
   >
-    <v-card width="700" height="700">
+    <v-card class="ma-4" width="700" height="500">
       <v-card-title> Vue 3 & Vuetify 3 </v-card-title>
       <v-divider />
       <v-card-text>
@@ -12,17 +12,21 @@
         abilities.
       </v-card-text>
       <v-card-actions class="justify-center">
-        <v-hover v-slot="{ hover, props }">
+        <v-hover
+          v-for="link in links"
+          :key="link.name"
+          v-slot="{ hover, props }"
+        >
           <v-img
             v-bind="props"
-            @click="$router.push('/colourpicker')"
-            class="shrink text-center align-center text-h6"
+            @click="$router.push(link.path)"
+            class="shrink text-center align-center text-h6 ma-2"
             :class="hover ? 'elevation-12 text-blue' : ''"
             max-width="200"
             contain
-            :src="require('../assets/colourPickerDemo.gif')"
+            :src="link.src"
           >
-            <span>Colour Picker</span>
+            <span>{{link.name}}</span>
             <v-icon v-if="hover">mdi-open-in-new</v-icon>
           </v-img>
         </v-hover>
@@ -41,10 +45,18 @@ export default {
       {
         name: "Colour Picker",
         path: "/colourpicker",
-        src: "../assets/colourPickerDemo.gif",
+        src: require("../assets/colourPickerDemo.gif"),
       },
-      { name: "Customer List", path: "/customerlist" },
-      { name: "Timer", path: "/timer" },
+      {
+        name: "Customer List",
+        path: "/customerlist",
+        src: require("../assets/customerListDemo.gif"),
+      },
+      {
+        name: "Timer",
+        path: "/timer",
+        src: require("../assets/customerListDemo.gif"),
+      },
     ]);
     return { links };
   },

@@ -1,15 +1,16 @@
 
 <template>
     <v-layout full-height class="justify-center align-center" :style="{backgroundColor: $store.state.colours.customerList}">
-        <v-card>
-            <v-card-title>
-                Customer List
-            </v-card-title>
-        </v-card>
+        <CustomerList />
     </v-layout>
 </template>
 <script>
+import CustomerList from "../components/CustomerList.vue"
+
 export default {
+    components:{
+        CustomerList,
+    },
     setup() {
         
     },
