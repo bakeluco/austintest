@@ -23,3 +23,10 @@ export default {
   }),
 }
 </script>
+
+<style>
+.inverted {
+  filter: invert(100%);
+  -webkit-filter: invert(100%);
+}
+</style>

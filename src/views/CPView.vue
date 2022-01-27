@@ -2,7 +2,12 @@
   <v-layout
     full-height
     class="justify-center align-center"
-    :style="{ backgroundColor: $store.state.selectedColour }"
+    :style="{
+      backgroundColor:
+        $store.state.theme == 'dark'
+          ? $store.state.colours.darkbg
+          : $store.state.selectedColour,
+    }"
   >
     <ColourPicker :colours="colours" />
   </v-layout>

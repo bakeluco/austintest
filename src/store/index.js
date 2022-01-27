@@ -10,6 +10,7 @@ export default createStore({
       colourPicker: '#edd2dc',
       customerList: '#b6cef1',
       timer: '#9ed4d8',
+      darkbg: '#141414',
     },
     selectedColour : '#edd2dc',
   },

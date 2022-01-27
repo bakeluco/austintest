@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar density="compact" absolute :color="$store.state.colours.austin">
+  <v-app-bar density="compact" absolute :color="bg">
     <v-btn
       density="comfortable"
       variant="text"
@@ -43,7 +43,7 @@
   </v-app-bar>
 </template>
 <script>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import { useStore } from "vuex";
 import { useDisplay } from "vuetify";
 
@@ -58,14 +58,14 @@ export default {
       { name: "Timer", to: "/timer" },
     ]);
 
-    return { links, store, display };
+    const bg = computed(() =>
+      store.state.theme == "dark"
+        ? store.state.colours.darkbg
+        : store.state.colours.austin
+    );
+
+    return { links, store, display, bg };
   },
 };
 </script>
 
-<style scoped>
-.inverted {
-  filter: invert(100%);
-  -webkit-filter: invert(100%);
-}
-</style>

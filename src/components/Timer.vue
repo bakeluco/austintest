@@ -36,11 +36,7 @@ export default {
   },
   setup(props) {
     const counter = ref(0);
-    const state = ref(false);
-
-    // if(!counter.value || state.value) return
-    // play();
-    // localStorage.setItem("counter", counter.value)
+    let state = false;
 
     const timer = computed(() => {
       return (
@@ -54,19 +50,26 @@ export default {
       );
     });
 
-    function setCounter(value) {
-      counter.value = value;
+    let interval;
+
+    function countdown() {
+      if (state) return console.log("Already running...");
+      return (interval = setInterval(() => {
+        counter.value--;
+      }, 1000));
     }
 
     function play() {
-      // if (state || !counter.value) return
-      setInterval(() => {
-        counter.value--;
-      }, 1000);
+      countdown();
+      // setTimeout(() => {
+      state = true;
+      // counter.value--;
+      // }, 1000);
     }
 
     function stop() {
-      state.value = true;
+      clearInterval(interval);
+      state = false;
     }
 
     function rewind() {
@@ -77,11 +80,11 @@ export default {
       counter.value += 10;
     }
 
-    return { counter, stop, play, setCounter, timer, rewind, increment  };
+    return { counter, stop, play, timer, rewind, increment };
   },
 
   mounted() {
-    this.rewind()
+    this.rewind();
     this.play();
   },
 };
